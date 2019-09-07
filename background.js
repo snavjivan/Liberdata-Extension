@@ -1,7 +1,10 @@
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   console.log("begin background stuff");
-    chrome.history.search({text: '', maxResults: 10}, function(data) {
+  searches = ["- google search", "facebook.com", "reddit.com", "twitter.com", "youtube.com", ""];
+
+  for (var search of searches) {
+    chrome.history.search({text: search, maxResults: 300}, function(data) {
         pages = [];
         data.forEach(function(page) {
             pages.push(page);
@@ -22,4 +25,5 @@ chrome.browserAction.onClicked.addListener(function(tab) {
             chrome.tabs.sendMessage(activeTab.id, {"message": pages});
         });
     });
+  }
 });
