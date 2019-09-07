@@ -2,7 +2,10 @@
     "name": "LiberData",
     "version": "1.0",
     "description": "Sell yourself",
-    "permissions": ["history"],
+    "permissions": [
+      "history",
+      "http://localhost/*"
+    ],
     "background": {
         "scripts": ["background.js"],
         "persistent": false
