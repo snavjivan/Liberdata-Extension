@@ -1,7 +1,7 @@
 {
     "name": "LiberData",
     "version": "1.0",
-    "description": "Sell yourself",
+    "description": "Democratizing your personal data.",
     "permissions": [
       "history"
     ],
