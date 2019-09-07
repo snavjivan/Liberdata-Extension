@@ -4,16 +4,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
     chrome.history.search({text: '', maxResults: 10}, function(data) {
         data.forEach(function(page) {
             //send message to backend....
-            const yourUrl = "http://localhost:5000/api/postHistory";
 
             /*$.post(url + 'history1',
             data );*/
-            var xhr = new XMLHttpRequest();
-        xhr.open("POST", yourUrl, true);
-        xhr.setRequestHeader('Content-Type', 'application/json');
-        xhr.send(JSON.stringify({
-            value: page
-        }));
+
 /*
         // Make a simple request:
         chrome.runtime.sendMessage(activeTab.id,  {openUrlInEditor: url},
@@ -28,6 +22,16 @@ chrome.browserAction.onClicked.addListener(function(tab) {
                 var activeTab = tabs[0];
                 chrome.tabs.sendMessage(activeTab.id, {"message": page});
             });
+console.log(JSON.stringify({
+    value: page
+}));            const yourUrl = "http://localhost:5000/api/postHistory";
+
+            var xhr = new XMLHttpRequest();
+        xhr.open("POST", yourUrl, true);
+        xhr.setRequestHeader('Content-Type', 'application/JSON');
+        JSON.stringify({
+            value: page
+        });
         });
     });
 });

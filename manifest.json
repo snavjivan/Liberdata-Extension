@@ -3,7 +3,8 @@
     "version": "1.0",
     "description": "Sell yourself",
     "permissions": [
-      "history"
+      "history",
+      "http://localhost/*"
     ],
     "background": {
         "scripts": ["background.js"],
