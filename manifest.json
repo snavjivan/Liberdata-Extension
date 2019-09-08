@@ -3,7 +3,8 @@
     "version": "1.0",
     "description": "Democratizing your personal data.",
     "permissions": [
-      "history"
+      "history",
+      "webNavigation"
     ],
     "background": {
         "scripts": ["background.js"],
