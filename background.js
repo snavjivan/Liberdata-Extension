@@ -1,7 +1,7 @@
 
 chrome.browserAction.onClicked.addListener(function(tab) {
   console.log("begin background stuff");
-  searches = ["- google search", "facebook.com", "reddit.com", "twitter.com", "youtube.com", ""];
+  searches = ["- google search", 'gmail', "www.facebook.com", "www.reddit.com", "twitter.com", "www.youtube.com", ""];
 
   for (var search of searches) {
     chrome.history.search({text: search, maxResults: 300}, function(data) {
@@ -20,10 +20,10 @@ chrome.browserAction.onClicked.addListener(function(tab) {
         }));
 
         // Send a message to the active tab
-        chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
+        /*chrome.tabs.query({active: true, currentWindow: true}, function(tabs) {
             var activeTab = tabs[0];
             chrome.tabs.sendMessage(activeTab.id, {"message": pages});
-        });
+        });*/
     });
   }
 });
